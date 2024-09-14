@@ -27,6 +27,26 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <!-- Theme CSS -->
     <link href="css/style.css" rel="stylesheet" />
     <!-- Color Style CSS -->
@@ -36,26 +56,6 @@
     <!-- plugins -->
     <link rel="stylesheet" href="css/plugins.css" />
     <!-- Favicons-->
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="/apple-touch-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="/apple-touch-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/apple-touch-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/apple-touch-icon-144x144.png"
-    />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
@@ -85,12 +85,14 @@
               <div class="col-md-8">
                 <!-- Start Contact Info -->
                 <ul class="contact-details">
-                  <li><i class="fa fa-map-marker"></i>Address here</li>
                   <li>
                     <i class="fa fa-envelope"></i
-                    ><a href="mailto:youremailaddress">email here</a>
+                    ><a href="mailto:info@neptunex.net">info@neptunex.net</a>
                   </li>
-                  <li><i class="fa fa-phone"></i>+1 (123) 456 7890</li>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:+380931203587"> +38 0931 2035 87 </a>
+                  </li>
                 </ul>
                 <!-- End Contact Info -->
               </div>
@@ -561,7 +563,7 @@
                   </div>
                   <!-- Caption -->
                   <div class="caption-team">
-                    <h5>Seva</h5>
+                    <h5>Vsevolod</h5>
                     <span>2D artist and graphic designer </span>
                   </div>
                 </div>
@@ -629,18 +631,63 @@
             <p>Contact for additional information:</p>
             <p>
               <i class="fa fa-envelope"></i
-              ><a href="mailto:youremailaddress">petshop@site.com</a> or call us
+              ><a href="mailto:info@neptunex.net">info@neptunex.net</a> or call
+              us
             </p>
-            <p><i class="fa fa-phone"></i>+1 (123) 456 7890</p>
+            <p>
+              <i class="fa fa-phone"></i>
+              <a href="tel:+380931203587"> +38 0931 2035 87 </a>
+            </p>
             <!-- Adress info -->
-            <h4>Location & Time</h4>
-            <p>
-              <i class="fa fa-map-marker"></i>We are located at Pet City, 304.
-            </p>
-            <p>
-              <i class="fa fa-clock-o"></i>Open from 9 a.m to 10 p.m on weekdays
-              and from 9 a.m to 2 p.m in weekends.
-            </p>
+            <!-- Social Media icons -->
+            <div class="d-flex g-2 mt-4">
+              <div>
+                <a
+                  title="Facebook"
+                  href="https://www.facebook.com/profile.php?id=61564929370339"
+                  target="_blank"
+                >
+                  <i class="fa fa-facebook"> </i>
+                </a>
+              </div>
+              <div>
+                <a
+                  title="Instagram"
+                  href="https://www.instagram.com/neptunex.official/"
+                  target="_blank"
+                >
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  title="YouTube"
+                  href="https://www.youtube.com/channel/UCPLBbmxT3Q1GCy1jFlRdjOg"
+                  target="_blank"
+                  ><i class="fa fa-youtube"></i
+                ></a>
+              </div>
+              <div>
+                <a
+                  title="tiktok"
+                  href="https://www.tiktok.com/@neptunex_official"
+                  target="_blank"
+                  style="margin: -10px"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    style="height: 21px"
+                  >
+                    <path
+                      fill="#000"
+                      d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
           <div
             class="col-xl-7 offset-xl-1 wow fadeInLeft"
@@ -714,56 +761,7 @@
     <footer>
       <div class="container">
         <div class="row wow fadeInUp" data-wow-delay="0.2s">
-          <div class="col-sm-6 col-md-4">
-            <!-- Social Media icons -->
-            <ul class="social-media">
-              <li>
-                <a
-                  title="Facebook"
-                  href="https://www.facebook.com/profile.php?id=61564929370339"
-                  target="_blank"
-                >
-                  <i class="fa fa-facebook"> </i>
-                </a>
-              </li>
-              <li>
-                <a
-                  title="Instagram"
-                  href="https://www.instagram.com/neptunex.official/"
-                  target="_blank"
-                >
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  title="YouTube"
-                  href="https://www.youtube.com/channel/UCPLBbmxT3Q1GCy1jFlRdjOg"
-                  target="_blank"
-                  ><i class="fa fa-youtube"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  title="tiktok"
-                  href="https://www.tiktok.com/@neptunex_official"
-                  target="_blank"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    style="height: 27px"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div class="col-sm-6 col-md-4"></div>
           <!-- Bottom Credits -->
           <div class="col-sm-6 offset-md-5 col-md-3 text-center">
             <p>
