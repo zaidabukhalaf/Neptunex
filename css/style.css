@@ -207,7 +207,7 @@ a:focus {
 }
 
 .navbar {
-  padding: 0px;
+  padding: 20px 0;
   background-color: #180202;
   margin-bottom: 0;
   z-index: 900;
@@ -2474,6 +2474,7 @@ ul {
 @media (max-width: 1200px) {
   .navbar-toggler {
     margin: 15px;
+    background-color: #efefef;
   }
 
   .slider-container {

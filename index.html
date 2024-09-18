@@ -76,82 +76,7 @@
       </div>
     </div>
     <!-- navbar starts -->
-    <nav class="navbar navbar-expand-xl navbar-custom fixed-top p-0">
-      <div class="container-fluid p-0 d-none d-lg-block">
-        <!-- top bar starts -->
-        <div class="top-bar">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <!-- Start Contact Info -->
-                <ul class="contact-details">
-                  <li>
-                    <i class="fa fa-envelope"></i
-                    ><a href="mailto:info@neptunex.net">info@neptunex.net</a>
-                  </li>
-                  <li>
-                    <i class="fa fa-phone"></i>
-                    <a href="tel:+380931203587"> +38 0931 2035 87 </a>
-                  </li>
-                </ul>
-                <!-- End Contact Info -->
-              </div>
-              <div class="col-md-4">
-                <!-- Start Social Links -->
-                <ul class="social-list">
-                  <li>
-                    <a
-                      title="Facebook"
-                      href="https://www.facebook.com/profile.php?id=61564929370339"
-                      target="_blank"
-                      ><i class="fa fa-facebook"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      title="Instagram"
-                      href="https://www.instagram.com/neptunex.official/"
-                      target="_blank"
-                      ><i class="fa fa-instagram"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      title="YouTube"
-                      href="https://www.youtube.com/channel/UCPLBbmxT3Q1GCy1jFlRdjOg"
-                      target="_blank"
-                      ><i class="fa fa-youtube"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      title="TikTok"
-                      href="https://www.tiktok.com/@neptunex_official"
-                      target="_blank"
-                      style="height: 42px"
-                      class="d-flex justify-content-center align-items-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        style="height: 18px"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-                <!-- End Social Links -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <nav class="navbar navbar-expand-xl navbar-custom fixed-top">
       <!-- End Top bar -->
       <div class="container">
         <!-- Logo -->
@@ -323,15 +248,24 @@
         <div class="row">
           <!-- item 1-->
           <div class="col-lg-4 ps-3 pe-3 wow fadeInLeft" data-wow-delay="0.2s">
-            <div class="img-wrapper">
-              <img src="img/game1.png" alt="" class="img-fluid" />
-            </div>
-            <h4>Tetris Block Merge</h4>
-            <p class="margin">
-              Shoot colored blocks to match and clear them, triggering explosive
-              blasts. Fast-paced and fun, Tetris Block Merge keeps you hooked
-              with every level.
-            </p>
+            <a
+              href="https://apps.apple.com/us/app/tetris-block-merge-iq-puzzle/id6504354335"
+              target="_blank"
+            >
+              <div class="img-wrapper">
+                <img src="img/game1.png" alt="" class="img-fluid" />
+              </div>
+
+              <h4 class="d-block mt-2" style="color: rgb(51, 51, 51)">
+                Tetris Block Merge
+              </h4>
+
+              <p class="margin">
+                Shoot colored blocks to match and clear them, triggering
+                explosive blasts. Fast-paced and fun, Tetris Block Merge keeps
+                you hooked with every level.
+              </p>
+            </a>
           </div>
           <!-- /col-->
           <!-- item 2-->
@@ -339,7 +273,7 @@
             <div class="img-wrapper">
               <img src="img/game2.png" alt="" class="img-fluid" />
             </div>
-            <h4>Business Empire - Idle Tycoon</h4>
+            <h4 class="d-block mt-2">Business Empire - Idle Tycoon</h4>
             <p class="margin">
               Become the owner of the best club in town! Earn money to transform
               your venue into the ultimate party destination. Hire staff,
@@ -354,7 +288,7 @@
             <div class="img-wrapper">
               <img src="img/game3.png" alt="" class="img-fluid" />
             </div>
-            <h4>Coming Soon</h4>
+            <h4 class="d-block mt-2">Coming Soon</h4>
             <p>
               Stay tuned for our upcoming game releases. We're always working on
               new projects to bring you fresh and exciting gaming experiences.
@@ -712,12 +646,17 @@
     <footer>
       <div class="container">
         <div class="row wow fadeInUp" data-wow-delay="0.2s">
-          <div class="col-sm-6 col-md-4"></div>
-          <!-- Bottom Credits -->
-          <div class="col-sm-6 offset-md-5 col-md-3 text-center">
+          <div class="col-sm-6 col-md-4">
             <p>
               COPYRIGHT © <span id="currentYear"></span> NEPTUNEX GAME.
               <br />
+            </p>
+          </div>
+          <!-- Bottom Credits -->
+          <div class="col-sm-6 offset-md-5 col-md-3 text-center">
+            <!-- add privacy policy  -->
+            <p>
+              <a href="privacy.html">Privacy Policy</a>
             </p>
           </div>
         </div>
