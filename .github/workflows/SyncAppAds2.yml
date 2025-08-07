@@ -18,8 +18,13 @@ jobs:
           mkdir -p synced
           curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt
 
-      - name: Commit and push if changes
+      - name: Commit & Push if changed
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git add app-ads.txt
-          git diff --cached --quiet || git commit -m "Sync Sync appAds.txt File"
-          git push
+          git config --global user.email "neptunex2023@gmail.com"          
+          git add external-sync/file.txt
+          git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
+
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/zaidabukhalaf/Neptunex.git
+          git push origin main
