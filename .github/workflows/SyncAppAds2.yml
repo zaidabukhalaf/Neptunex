@@ -1,0 +1,27 @@
+name: Sync appads txt File
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour
+  workflow_dispatch:     # manual trigger
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repo
+        uses: actions/checkout@v4
+
+      - name: Fetch external file
+        run: |
+          mkdir -p synced
+          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt
+
+      - name: Commit and push if changes
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add app-ads.txt
+          git diff --cached --quiet || git commit -m "Sync Sync appAds.txt File"
+          git push
