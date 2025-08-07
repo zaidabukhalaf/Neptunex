@@ -20,8 +20,6 @@ jobs:
 
       - name: Commit and push if changes
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
           git add app-ads.txt
           git diff --cached --quiet || git commit -m "Sync Sync appAds.txt File"
           git push
