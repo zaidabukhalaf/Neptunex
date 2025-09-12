@@ -1,4 +1,4 @@
-name: SyncAppAds2
+name: Sync app-ads.txt
 
 on:
   workflow_dispatch: # manual trigger
@@ -47,7 +47,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
           git remote set-url origin git@github.com:${{ github.repository }}.git
-          git push origin HEAD:${{ github.ref_name }}
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Example step using NEPTUNEX_BUCKET
         run: echo "Deploying to bucket: ${{ vars.NEPTUNEX_BUCKET }}"
