@@ -24,5 +24,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git add app-ads.txt
           git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
-          git remote set-url origin https://x-access-token:${{secrets.NEPTUNEX_DEPLOY_KEY}}@github.com/zaidabukhalaf/Neptunex.git
+          git remote set-url origin https://x-access-token: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@github.com/zaidabukhalaf/Neptunex.git
           git push origin main
