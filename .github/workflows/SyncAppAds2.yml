@@ -1,53 +1,30 @@
-name: Sync app-ads.txt
+name: Sync appads txt File
 
 on:
-  workflow_dispatch: # manual trigger
   schedule:
-    - cron: "0 2 * * *" # run daily at 2AM UTC
+    - cron: '0 2 * * *'  # every hour
+  workflow_dispatch:     # manual trigger
 
 jobs:
   sync-file:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout this repo
+      - name: Checkout your repo
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false # we’ll handle auth manually
 
-      - name: Fetch remote app-ads.txt
+      - name: Fetch external file
         run: |
-          curl -sSL \
-            https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/main/app-ads.txt \
-            -o remote-app-ads.txt
+          mkdir -p synced
+          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt
 
-      - name: Compare with local file
-        id: diffcheck
+      - name: Commit & Push if changed
+        env:
+          GH_PAT: ${{ secrets.NEPTUNEX_DEPLOY_KEY }}
         run: |
-          if ! diff -q remote-app-ads.txt app-ads.txt >/dev/null 2>&1; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-            cp remote-app-ads.txt app-ads.txt
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
+          git config --global user.email "neptunex2023@gmail.com"          
+          git add external-sync/file.txt
+          git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
-      - name: Commit & push changes
-        if: steps.diffcheck.outputs.changed == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add app-ads.txt
-          git commit -m "chore: sync app-ads.txt from upstream"
-          
-          # Use SSH deploy key
-          mkdir -p ~/.ssh
-          echo "${{ secrets.NEPTUNEX_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-          git remote set-url origin git@github.com:${{ github.repository }}.git
-          git push origin "HEAD:${GITHUB_REF_NAME}"
-
-      - name: Example step using NEPTUNEX_BUCKET
-        run: echo "Deploying to bucket: ${{ vars.NEPTUNEX_BUCKET }}"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/zaidabukhalaf/Neptunex.git
+          git push origin main
