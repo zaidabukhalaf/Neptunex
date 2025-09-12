@@ -22,8 +22,7 @@ jobs:
       - name: Commit & Push if changed
         env:
           GH_PAT: ${{ secrets.NEPTUNEX_DEPLOY_KEY }}
-        run: |
-          git config --global user.email "neptunex2023@gmail.com"          
+        run: |        
           git add app-ads.txt
           git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
