@@ -24,7 +24,7 @@ jobs:
           GH_PAT: ${{ secrets.NEPTUNEX_DEPLOY_KEY }}
         run: |
           git config --global user.email "neptunex2023@gmail.com"          
-          git add external-sync/file.txt
+          git add app-ads.txt
           git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/zaidabukhalaf/Neptunex.git
