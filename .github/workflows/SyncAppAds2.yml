@@ -16,23 +16,15 @@ jobs:
       - name: Fetch external file
         run: |
           mkdir -p synced
-          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt \
-            -o app-ads.txt
+          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt
 
       - name: Commit & Push if changed
-        env:
-          GH_PAT: ${{ secrets.NEPTUNEX_DEPLOY_KEY }}
-        run: |        
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "neptunex2023@gmail.com"
-          git add app-ads.txt
+
+                
+        run: |
+          git config --global user.email "neptunex2023@gmail.com"          
+          git add external-sync/file.txt
           git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
-          # Setup SSH with deploy key
-          mkdir -p ~/.ssh
-          echo "${{ secrets.NEPTUNEX_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-          git remote set-url origin git@github.com:zaidabukhalaf/Neptunex.git
+          git remote set-url origin https://x-access-token:${{secrets.NEPTUNEX_DEPLOY_KEY}}@github.com/zaidabukhalaf/Neptunex.git
           git push origin main
