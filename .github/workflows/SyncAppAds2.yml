@@ -2,7 +2,7 @@ name: Sync appads txt File
 
 on:
   schedule:
-    - cron: '0 * * * *'  # every hour
+    - cron: '0 2 * * *'  # every hour
   workflow_dispatch:     # manual trigger
 
 jobs:
@@ -15,19 +15,17 @@ jobs:
 
       - name: Fetch external file
         run: |
-          curl -sSL \
-            https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/main/app-ads.txt \
+          mkdir -p synced
+          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt \
             -o app-ads.txt
 
       - name: Commit & Push if changed
         env:
           GH_PAT: ${{ secrets.NEPTUNEX_DEPLOY_KEY }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "neptunex2023@gmail.com"
+          git config --global user.email "neptunex2023@gmail.com"          
+          git add external-sync/file.txt
+          git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
-          git add app-ads.txt
-          git diff --cached --quiet || git commit -m "Auto-sync: Update app-ads.txt from external repo"
-
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/zaidabukhalaf/Neptunex.git
           git push origin main
