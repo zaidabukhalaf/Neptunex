@@ -1,4 +1,4 @@
-name: Sync app-ads.txt
+name: SyncAppAds2
 
 on:
   workflow_dispatch: # manual trigger
