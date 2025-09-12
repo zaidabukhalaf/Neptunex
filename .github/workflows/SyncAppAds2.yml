@@ -28,5 +28,11 @@ jobs:
           git add app-ads.txt
           git diff --cached --quiet || git commit -m "Auto-sync: Update file.txt from external repo"
 
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/zaidabukhalaf/Neptunex.git
+          # Setup SSH with deploy key
+          mkdir -p ~/.ssh
+          echo "${{ secrets.NEPTUNEX_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          git remote set-url origin git@github.com:zaidabukhalaf/Neptunex.git
           git push origin main
