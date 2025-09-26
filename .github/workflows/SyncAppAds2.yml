@@ -18,7 +18,7 @@ jobs:
       - name: Fetch external file
         run: |
           mkdir -p synced
-          curl -s -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt \
+          curl -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt \
             -o app-ads.txt
       - name: Commit & Push if changed
         run: |
