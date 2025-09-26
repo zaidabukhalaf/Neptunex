@@ -2,8 +2,8 @@ name: Sync appads txt File
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # every hour
-  workflow_dispatch:     # manual trigger
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 permissions:
   contents: write
   
@@ -18,7 +18,7 @@ jobs:
       - name: Fetch external file
         run: |
           mkdir -p synced
-          curl -L https://github.com/cleveradssolutions/App-ads.txt/blob/main/app-ads.txt \
+          curl -L  https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/main/app-ads.txt \
             -o app-ads.txt
       - name: Commit & Push if changed
         run: |
