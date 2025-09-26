@@ -4,7 +4,9 @@ on:
   schedule:
     - cron: '0 2 * * *'  # every hour
   workflow_dispatch:     # manual trigger
-
+permissions:
+  contents: write
+  
 jobs:
   sync-file:
     runs-on: ubuntu-latest
