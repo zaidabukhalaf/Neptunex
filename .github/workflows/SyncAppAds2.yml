@@ -20,6 +20,11 @@ jobs:
           mkdir -p synced
           curl -L  https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/main/app-ads.txt \
             -o app-ads.txt
+      - name: Append Facebook app-ads entry
+        run: |
+          LINE="facebook.com, 8075543355876956, DIRECT, c3e20eee3f780d68 \n facebook.com, 8075543355876956, RESELLER, c3e20eee3f780d68"
+          grep -Fxq "$LINE" app-ads.txt || echo "$LINE" >> app-ads.txt
+
       - name: Commit & Push if changed
         run: |
           git config --global user.email "neptunex2023@gmail.com"         
